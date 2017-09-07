@@ -1,0 +1,17 @@
+import time
+import datetime
+import os
+import glob
+
+
+filename=datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")
+wf=open(filename+".txt","a")
+os.chdir("/Sample-Files")
+for file in glob.glob("*.txt"):
+    with open(file,"r") as file:
+        wf.write(file.read())
+wf.close()
+
+
+
+
